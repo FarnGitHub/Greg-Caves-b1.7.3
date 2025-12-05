@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "farn.greg_cave.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "CaveCarverMixin",
+    "CarverStub"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
