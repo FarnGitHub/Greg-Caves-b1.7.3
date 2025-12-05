@@ -16,6 +16,9 @@ public class MapGenGregCaves extends MapGenCaves {
     private double[] depthNoises;
     private World worldObj;
     public static boolean mgPack = false;
+    private final int worldHeight = 128;
+    private final int shiftNoiseX = 11;
+    private final int shiftNoiseZ = 7;
 
     @Override
     public void func_867_a(IChunkProvider c, World w, int chunkX, int chunkZ, byte[] blocks) {
@@ -80,14 +83,13 @@ public class MapGenGregCaves extends MapGenCaves {
                         double z1Add = (x1z1 - x0z1) * 0.25D;
 
                         for (int pieceX = 0; pieceX < 4; ++pieceX) {
-                            int index = pieceX + noiseX * 4 << 11 | noiseZ * 4 << 7 | noiseY * 8 + pieceY;
-                            short idAdd = 128;
-                            index -= idAdd;
+                            int index = pieceX + noiseX * 4 << this.shiftNoiseX | noiseZ * 4 << this.shiftNoiseZ | noiseY * 8 + pieceY;
+                            index -= this.worldHeight;
                             double densityAdd = (z1 - z0) * 0.25D;
                             double density = z0 - densityAdd;
 
                             for (int pieceZ = 0; pieceZ < 4; ++pieceZ) {
-                                index += idAdd;
+                                index += this.worldHeight;
                                 if ((density += densityAdd) < 0) {
                                      int y = noiseY * 8 + pieceY;
                                      if (y > 0) {

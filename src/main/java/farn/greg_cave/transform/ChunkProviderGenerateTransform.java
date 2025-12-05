@@ -11,13 +11,6 @@ import net.minecraft.src.*;
 @CTransformer(ChunkProviderGenerate.class)
 public class ChunkProviderGenerateTransform implements IReplaceVanillaCave{
 
-    /*private MapGenGregCaves gregCaves = new MapGenGregCaves();
-
-    @CRedirect(method = "provideChunk", target = @CTarget(value="INVOKE", target = "Lnet/minecraft/src/MapGenBase;func_867_a(Lnet/minecraft/src/IChunkProvider;Lnet/minecraft/src/World;II[B)V"))
-    public void swapVanillaCaveWithGregCave(MapGenBase cavesOg, IChunkProvider provider, World world, int chunkX, int chunkY, byte[] block) {
-        gregCaves.func_867_a(provider, world, chunkX, chunkY, block);
-    }*/
-
     @CShadow
     private MapGenBase field_902_u;
 

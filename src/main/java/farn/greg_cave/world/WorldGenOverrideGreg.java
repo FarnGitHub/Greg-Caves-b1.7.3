@@ -17,6 +17,6 @@ public class WorldGenOverrideGreg extends ChunkProviderGenerateGenerator {
     }
 
     public void preTerrain(ChunkProviderGenerate yf1, Random random2, byte[] bs, Chunk lm4, BiomeGenBase[] biomeGenBases, double[] ds) {
-        ((IReplaceVanillaCave)yf1).replaceVanillaCave();
+         ((IReplaceVanillaCave)yf1).replaceVanillaCave();
     }
 }
