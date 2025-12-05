@@ -94,9 +94,13 @@ public class MapGenGregCaves extends MapGenCaves {
                                      int y = noiseY * 8 + pieceY;
                                      if (y > 0) {
                                         if (blocks[index] == Block.bedrock.blockID) {
-                                            blocks[index] = (byte)Block.stone.blockID;
+                                            blocks[index] = (byte) Block.stone.blockID;
                                         } else {
-                                            blocks[index] = 0;
+                                            if(y < 11) {
+                                                blocks[index] = (byte) Block.lavaStill.blockID;
+                                            } else {
+                                                blocks[index] = 0;
+                                            }
                                         }
                                      }
                                 }
