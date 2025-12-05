@@ -15,6 +15,7 @@ public class MapGenGregCaves extends MapGenCaves {
     private double[] upperInterpolatedNoises;
     private double[] depthNoises;
     private World worldObj;
+    public static boolean mgPack = false;
 
     @Override
     public void func_867_a(IChunkProvider c, World w, int chunkX, int chunkZ, byte[] blocks) {
@@ -34,17 +35,15 @@ public class MapGenGregCaves extends MapGenCaves {
             }
         }
         this.worldObj = w;
+        int k = this.field_1306_a;
         this.rand.setSeed(w.getRandomSeed());
-        int k = 8;
-        long l = this.rand.nextLong();
-        long i1 = this.rand.nextLong();
-        BlockSand.fallInstantly = true;
-        for (int j1 = chunkX - k; j1 <= chunkX + k; ++j1) {
-            for (int k1 = chunkZ - k; k1 <= chunkZ + k; ++k1) {
-                long l1 = (long) j1 * l;
-                long i2 = (long) k1 * i1;
-                this.rand.setSeed(l1 ^ i2 ^ w.getRandomSeed());
-                this.func_868_a(w, j1, k1, chunkX, chunkZ, blocks);
+        long var7 = this.rand.nextLong() / 2L * 2L + 1L;
+        long var9 = this.rand.nextLong() / 2L * 2L + 1L;
+
+        for (int var11 = chunkX - k; var11 <= chunkX + k; var11++) {
+            for (int var12 = chunkZ - k; var12 <= chunkZ + k; var12++) {
+                this.rand.setSeed(var11 * var7 + var12 * var9 ^ w.getRandomSeed());
+                this.func_868_a(w, var11, var12, chunkX, chunkZ, blocks);
             }
         }
         this.generateNoiseCaves(chunkX, chunkZ, blocks);

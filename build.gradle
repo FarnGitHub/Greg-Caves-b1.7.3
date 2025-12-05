@@ -47,7 +47,7 @@ unimined {
                     c(name, path, path)
                 }
 
-                c('mod_ExampleMod', 'com/example/mod_ExampleMod', 'com/example/mod_ExampleMod')
+                ['mod_GregCaveMangoPack'].each(mapClass)
 
                 // Modloader
                 ['BaseMod', 'EntityRendererProxy', 'MLProp', 'ModLoader', 'ModTextureAnimation', 'ModTextureStatic'].each(mapClass)
