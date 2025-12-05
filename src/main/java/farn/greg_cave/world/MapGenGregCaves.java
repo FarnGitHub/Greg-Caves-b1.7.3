@@ -22,6 +22,7 @@ public class MapGenGregCaves extends MapGenCaves {
 
     @Override
     public void func_867_a(IChunkProvider c, World w, int chunkX, int chunkZ, byte[] blocks) {
+        this.rand.setSeed(w.getRandomSeed());
         if (worldObj != w) {
             this.caveNoise = new double[825];
             this.biomeWeightTable = new float[25];
@@ -39,7 +40,6 @@ public class MapGenGregCaves extends MapGenCaves {
         }
         this.worldObj = w;
         int k = this.field_1306_a;
-        this.rand.setSeed(w.getRandomSeed());
         long var7 = this.rand.nextLong() / 2L * 2L + 1L;
         long var9 = this.rand.nextLong() / 2L * 2L + 1L;
 
