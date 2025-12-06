@@ -178,7 +178,9 @@ dependencies {
         transitive = false
     }
 
-    modImplementation("com.github.ItsElix99:Better-World-Options:0.3.3")
+    modImplementation("com.github.ItsElix99:Better-World-Options:0.3.3") {
+        transitive = false
+    }
 }
 
 processResources {

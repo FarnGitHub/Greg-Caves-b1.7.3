@@ -1,29 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "template",
+  "id": "greg_cave",
   "version": "${version}",
-
-  "name": "Template",
-  "description": "",
+  "name": "Greg Cave",
+  "description": "add a new caves that are similar to the one from 1.18",
   "authors": [
-    "DanyGames2014"
+    "farnfarn02"
   ],
-
   "license": "MIT",
   "icon": "farn/greg_cave/icon.png",
   "environment": "*",
-  "entrypoints": {
-    "stationapi:event_bus": [
-    ],
-    "stationapi:event_bus_client": [
-    ],
-    "stationapi:event_bus_server": [
-    ]
-  },
   "mixins": [
-    "template.mixins.json"
+    "greg_cave.mixins.json"
   ],
-
   "depends": {
     "minecraft": "1.0.0-beta.7.3",
     "stationapi": "*"
